@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "martingale-sinkhorn"
+version = "0.1.0"
+description = "Expectile-regularised neural Martingale Optimal Transport (Martingale Sinkhorn)"
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+  "tqdm>=4.66",
+  "jax>=0.4.20",
+  "jaxlib>=0.4.20",
+  "flax>=0.8.0",
+  "optax>=0.2.2",
+  "ott-jax>=0.4.0",
+]
+
+[project.optional-dependencies]
+viz = [
+  "matplotlib>=3.8",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests*", "examples*"]
